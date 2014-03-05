@@ -19,6 +19,6 @@ get '/' do
     'Content-Disposition' => "attachment;filename=\"factsheet.pdf\"",
     'Expires' => '0',
     'Pragma' => 'public' })
-  kit = PDFKit.new('https://github.com/about')
+  kit = PDFKit.new(erb(:index))
   pdf = kit.to_pdf
 end
