@@ -1,8 +1,8 @@
-<h1>GitHub Quick Facts</h1>
+<h1>GitHub Quick Facts</  h1>
 
 <p>
   GitHub is the best place to share code with friends, co-workers, classmates,
-  and complete strangers. Over four million people use GitHub to build amazing
+  and complete strangers. Over <%= @total_users %> people use GitHub to build amazing
   things together.
 </p>
 
@@ -21,8 +21,8 @@
 <h2>GitHub.com</h2>
 
 <ul>
-  <li>4 million users</li>
-  <li>8 million repositories (projects)</li>
+  <li><%= @total_users %> users</li>
+  <li><%= @total_repos %> repositories (projects)</li>
   <li>16 million unique visitors per month</li>
   <li>Ranked 256th most trafficked website on the internet</li>
 </ul>

@@ -13,6 +13,9 @@ PDFKit.configure do |config|
 end
 
 get '/' do
+  @total_users = 5_400_00
+  @total_repos = 11_300_000
+
   headers({ 'Content-Type' => 'application/pdf',
     'Content-Description' => 'File Transfer',
     'Content-Transfer-Encoding' => 'binary',
