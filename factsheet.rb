@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'pdfkit'
+require 'numbers_and_words'
 
 PDFKit.configure do |config|
   config.wkhtmltopdf = '/opt/boxen/rbenv/shims/wkhtmltopdf'
@@ -13,7 +14,7 @@ PDFKit.configure do |config|
 end
 
 get '/' do
-  @total_users = 5_400_00
+  @total_users = 5_400_000
   @total_repos = 11_300_000
 
   headers({ 'Content-Type' => 'application/pdf',
