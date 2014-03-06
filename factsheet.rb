@@ -14,13 +14,25 @@ PDFKit.configure do |config|
   }
 end
 
+def number_to_ordinal(num)
+  num = num.to_i
+  if (10...20)===num
+    "#{num}th"
+  else
+    g = %w{ th st nd rd th th th th th th }
+    a = num.to_s
+    c=a[-1..-1].to_i
+    a + g[c]
+  end
+end
+
 def get_alexa_rank
   access_key_id     = ENV['AWS_ACCESS_KEY_ID']
   secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
 
   client = Alexa::Client.new(access_key_id: access_key_id, secret_access_key: secret_access_key)
   url_info = client.url_info(url: "github.com")
-  url_info.rank
+  number_to_ordinal url_info.rank
 end
 
 get '/' do
